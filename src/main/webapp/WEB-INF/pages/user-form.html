@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add User</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        a {
+            color: darkgreen;
+        }
+        .mg {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a href="/users">go Back</a>
+
+    <form class="mg" th:action="@{|/users/${action}|}" th:object="${user}" method="post">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <label for="fistName">Fist Name: </label>
+        <input type="text" id="fistName" required minlength="2" th:field="*{firstName}" />
+        <br/>
+        <br/>
+        <label for="lastName">Last Name:  </label>
+        <input type="text" id="lastName" required minlength="2" th:field="*{lastName}" />
+        <br/>
+        <br/>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required th:field="*{email}" />
+        <br/>
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+</body>
+</html>
