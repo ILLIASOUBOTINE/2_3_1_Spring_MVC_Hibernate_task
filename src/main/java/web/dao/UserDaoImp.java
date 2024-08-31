@@ -1,6 +1,5 @@
 package web.dao;
 
-
 import org.springframework.stereotype.Repository;
 import web.model.User;
 import javax.persistence.EntityManager;
@@ -14,9 +13,9 @@ public class UserDaoImp implements UserDao {
    @PersistenceContext
    private EntityManager entityManager;
 
-
-    @Override
+   @Override
     public void add(User user) {
+
      entityManager.persist(user);
     }
 

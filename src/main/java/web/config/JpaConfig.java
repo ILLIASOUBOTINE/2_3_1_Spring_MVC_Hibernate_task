@@ -20,8 +20,13 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("web")
 public class JpaConfig {
+
+    private final Environment env;
+
     @Autowired
-    private Environment env;
+    public JpaConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public DataSource getDataSource() {
